@@ -10,7 +10,9 @@ This project is a C# application that automatically finds the router's IP addres
 - **Opening the address in the browser**: When the button is clicked, the application opens the found IP address in the browser.
 
 # Using
-1.Launch the application.
-2.Click the "Find a Router" button.
-3.The router's IP address and information about it will be displayed in a text field.
-4.To go to the router settings, click "Open Settings"
+- 1.Launch the application.
+- 2.Click the "Find a Router" button.
+- 3.The router's IP address and information about it will be displayed in a text field.
+- 4.To go to the router settings, click "Open Settings"
+
+The attack button may not work correctly
