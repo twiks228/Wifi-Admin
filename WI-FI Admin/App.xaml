@@ -1,0 +1,79 @@
+﻿<Application x:Class="WI_FI_Admin.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:WI_FI_Admin"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <!-- Темный фон -->
+        <SolidColorBrush x:Key="DarkBackgroundBrush" Color="#FF121212"/>
+
+        <!-- Стиль для кнопок -->
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="DimGray"/>
+            <!-- Фон кнопки -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="12,6"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="DarkRed"/>
+                                <Setter TargetName="border" Property="Opacity" Value="0.9"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="border" Property="Background" Value="DarkGreen"/>
+                                <Setter TargetName="border" Property="Opacity" Value="1"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для TextBox -->
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="#FF1F1F1F"/>
+            <!-- Темный фон для TextBox -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="#FF6200EE"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Padding" Value="4"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Opacity" Value="0.95"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="TextBox">
+                        <Border Background="{TemplateBinding Background}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Стиль для TextBlock -->
+        <Style TargetType="TextBlock">
+            <Setter Property="Foreground" Value="DarkTurquoise"/>
+            <Setter Property="FontSize" Value="13"/>
+            <Setter Property="Opacity" Value="0.7"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+        </Style>
+    </Application.Resources>
+
+
+</Application>
